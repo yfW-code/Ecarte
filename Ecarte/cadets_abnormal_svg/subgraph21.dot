@@ -1,0 +1,24 @@
+strict digraph  {
+"127.0.0.1" [fontsize=30, shape=diamond];
+nginx [fontsize=30, shape=box];
+"128.55.12.122" [fontsize=30, shape=diamond];
+"81.49.200.166" [fontsize=30, shape=diamond];
+"78.205.235.65" [color=red, fontsize=30, shape=diamond];
+"200.36.109.214" [color=red, fontsize=30, shape=diamond];
+"/tmp/vUgefal" [color=red, fontsize=30, shape=ellipse];
+"/var/log/nginx-access.log" [fontsize=30, shape=ellipse];
+"/var/log/nginx-error.log" [fontsize=30, shape=ellipse];
+"127.0.0.1" -> nginx  [label="EVENT_RECVFROM\n52", weight=52];
+nginx -> "128.55.12.122"  [label="EVENT_WRITE\n50", weight=50];
+nginx -> "127.0.0.1"  [label="EVENT_WRITE\n52", weight=52];
+nginx -> "81.49.200.166"  [label="EVENT_WRITE\n2", weight=2];
+nginx -> "200.36.109.214"  [label="EVENT_SENDTO\n2", weight=2];
+nginx -> "/tmp/vUgefal"  [label="EVENT_UNLINK\n3", weight=3];
+nginx -> "/var/log/nginx-access.log"  [label="EVENT_WRITE\n1", weight=1];
+nginx -> "/var/log/nginx-error.log"  [label="EVENT_WRITE\n1", weight=1];
+nginx -> "78.205.235.65"  [label="EVENT_CONNECT\n2", weight=2];
+"128.55.12.122" -> nginx  [label="EVENT_RECVFROM\n50", weight=50];
+"81.49.200.166" -> nginx  [label="EVENT_RECVFROM\n2", weight=2];
+"78.205.235.65" -> nginx  [label="EVENT_RECVFROM\n2", weight=2];
+"200.36.109.214" -> nginx  [label="EVENT_RECVFROM\n1", weight=1];
+}

@@ -1,0 +1,22 @@
+strict digraph  {
+"python2.7" [fontsize=30, shape=box];
+"/var/cache/.*" [fontsize=30, shape=ellipse];
+"/usr/local/lib/.*" [fontsize=30, shape=ellipse];
+sh [fontsize=30, shape=box];
+"/dev/random" [fontsize=30, shape=ellipse];
+"/var/db/entropy/saved-entropy.1" [fontsize=30, shape=ellipse];
+inetd [fontsize=30, shape=box];
+"53.158.101.118" [color=red, fontsize=30, shape=diamond];
+"/bin/dd" [fontsize=30, shape=ellipse];
+"python2.7" -> "/var/cache/.*"  [label="EVENT_OPEN\n5", weight=5];
+"python2.7" -> "/usr/local/lib/.*"  [label="EVENT_OPEN\n497", weight=497];
+"/usr/local/lib/.*" -> "python2.7"  [label="EVENT_READ\n142", weight=142];
+sh -> "/dev/random"  [label="EVENT_OPEN\n332", weight=332];
+sh -> "/var/db/entropy/saved-entropy.1"  [label="EVENT_OPEN\n6", weight=6];
+"/dev/random" -> sh  [label="EVENT_READ\n331", weight=331];
+"/dev/random" -> "python2.7"  [label="EVENT_READ\n198", weight=198];
+"/dev/random" -> inetd  [label="EVENT_READ\n1", weight=1];
+inetd -> "53.158.101.118"  [label="EVENT_SENDTO\n2", weight=2];
+inetd -> "/dev/random"  [label="EVENT_OPEN\n1", weight=1];
+"/bin/dd" -> sh  [label="EVENT_EXECUTE\n332", weight=332];
+}

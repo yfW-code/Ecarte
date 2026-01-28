@@ -1,0 +1,10 @@
+strict digraph  {
+"192.113.144.28" [color=red, fontsize=30, shape=diamond];
+XIM [color=red, fontsize=30, shape=box];
+"/tmp/test" [color=red, fontsize=30, shape=ellipse];
+sshd [fontsize=30, shape=box];
+"192.113.144.28" -> XIM  [label="EVENT_RECVFROM\n1", weight=1];
+XIM -> "192.113.144.28"  [label="EVENT_SENDTO\n2", weight=2];
+"/tmp/test" -> XIM  [label="EVENT_EXECUTE\n1", weight=1];
+"/tmp/test" -> sshd  [label="EVENT_EXECUTE\n3", weight=3];
+}

@@ -1,0 +1,18 @@
+strict digraph  {
+inetd [fontsize=30, shape=box];
+"/home/frank/.*" [fontsize=30, shape=ellipse];
+"/tmp/tmp.*" [fontsize=30, shape=ellipse];
+"128.55.12.10" [fontsize=30, shape=diamond];
+"/tmp/.31.*" [fontsize=30, shape=ellipse];
+"128.55.12.110" [fontsize=30, shape=diamond];
+inetd -> "/home/frank/.*"  [label="EVENT_UNLINK\n2", weight=2];
+inetd -> "/tmp/tmp.*"  [label="EVENT_UNLINK\n3", weight=3];
+inetd -> "128.55.12.10"  [label="EVENT_SENDTO\n4", weight=4];
+inetd -> "/tmp/.31.*"  [label="EVENT_OPEN\n3", weight=3];
+inetd -> "128.55.12.110"  [label="EVENT_WRITE\n1", weight=1];
+"/home/frank/.*" -> inetd  [label="EVENT_LINK\n6", weight=6];
+"/tmp/tmp.*" -> inetd  [label="EVENT_READ\n1", weight=1];
+"128.55.12.10" -> inetd  [label="EVENT_RECVFROM\n2", weight=2];
+"/tmp/.31.*" -> inetd  [label="EVENT_READ\n1", weight=1];
+"128.55.12.110" -> inetd  [label="EVENT_READ\n1", weight=1];
+}
