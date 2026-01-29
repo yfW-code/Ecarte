@@ -1,5 +1,0 @@
-strict digraph  {
-bash [fontsize=30, shape=box];
-"/lib/libutil.so.9" [fontsize=30, shape=ellipse];
-bash -> "/lib/libutil.so.9"  [label="EVENT_OPEN\n61", weight=61];
-}

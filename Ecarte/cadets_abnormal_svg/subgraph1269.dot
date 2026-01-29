@@ -1,7 +1,0 @@
-strict digraph  {
-"/tmp/tmux-1002" [color=red, fontsize=30, shape=ellipse];
-sshd [fontsize=30, shape=box];
-master [fontsize=30, shape=box];
-"/tmp/tmux-1002" -> sshd  [label="EVENT_EXECUTE\n1", weight=1];
-"/tmp/tmux-1002" -> master  [label="EVENT_EXECUTE\n1", weight=1];
-}

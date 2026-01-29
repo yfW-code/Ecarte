@@ -1,9 +1,0 @@
-strict digraph  {
-"/usr/bin/uname" [fontsize=30, shape=ellipse];
-bash [fontsize=30, shape=box];
-test [fontsize=30, shape=box];
-sh [fontsize=30, shape=box];
-"/usr/bin/uname" -> bash  [label="EVENT_EXECUTE\n1", weight=1];
-"/usr/bin/uname" -> test  [label="EVENT_EXECUTE\n2", weight=2];
-"/usr/bin/uname" -> sh  [label="EVENT_EXECUTE\n2", weight=2];
-}
